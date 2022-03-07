@@ -17,6 +17,6 @@ public class Ex05 {
         /char g = 65_535;
         System.out.println(a+b+c+d+e+f+g);
         */
-    }*/
+   // }*/
 
 }
