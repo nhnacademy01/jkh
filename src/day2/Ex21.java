@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Ex21 {
     public static void main(String[] args) {
-        final int size = 5;
+        final int size = 100;
         boolean[][] canvas = new boolean[size][size];
         Random random = new Random();
         for (int i = 0; i < canvas.length; i++) {
