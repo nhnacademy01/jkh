@@ -5,6 +5,20 @@ public class Ex11 {
         for(int i =1; i<13;i++){
             printDaysInMonth(i);
         }
+        for(int i = 'a';i<='z';i++)
+        {
+            System.out.println(i);
+        }
+        showAToZ();
+    }
+    private static void showAToZ(){
+        for(int i = 'a';i<='z';i++)
+        {
+            System.out.printf("a" +i);
+        }
+    }
+    private static void star01(){
+
     }
     private static void printDaysInMonth(int month) {
         switch (month) {
