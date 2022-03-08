@@ -20,10 +20,10 @@ public class Ex12 {
                 System.out.printf(" ");
             }
             System.out.printf("2");
-            for(int k =size-1;k>i;k)
-            {
-                System.out.printf(" ");
-            }System.out.println("*");
+           // for(int k =size-1;k>i;k)
+           // {
+            //    System.out.printf(" ");
+           // }System.out.println("*");
 
 
         }
