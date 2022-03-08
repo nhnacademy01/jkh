@@ -1,3 +1,5 @@
+package day1;
+
 class PrimitiveTypes {
     int intDefault;
     byte byteDefault;

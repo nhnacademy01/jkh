@@ -1,3 +1,5 @@
+package day1;
+
 public class Ex01 {
     String instanceVariable = "instance";
     static String CLASS_VARIABLE = "class";

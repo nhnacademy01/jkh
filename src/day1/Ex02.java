@@ -1,4 +1,6 @@
- class Swap{
+package day1;
+
+class Swap{
     public void swqpfuntion(int a ,int b){
         int temp;//초기화 중요!!
         System.out.println("a: "+a+"b: "+b);

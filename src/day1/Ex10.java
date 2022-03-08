@@ -1,3 +1,5 @@
+package day1;
+
 import java.util.Scanner;
 class function {
     public void unicode(){
@@ -18,14 +20,14 @@ class function {
         if (sc.hasNext()) {
             name = sc.next();
         }
-
+        System.out.println("input email : ");
         if (sc.hasNext()) {
-            System.out.println("input email : ");
+
             email = sc.next();
         }
-
+        System.out.println("input mobile : ");
         if (sc.hasNext()) {
-            System.out.println("input mobile : ");
+
             mobile = sc.next();
         }
 
@@ -61,10 +63,10 @@ public class Ex10 {
 
     public static void main(String[] args) {
         function fn = new function();
-        fn.unicode();
+       // fn.unicode();
         fn.namecord();
-        fn.inchtocm();
-        fn.swap();
+       // fn.inchtocm();
+       // fn.swap();
         }
     }
 
