@@ -11,6 +11,7 @@ public class Ex08 {
                 grantGold();
             case 1:
                 grantSilver();
+                break;
             default:
                 noBenefit();
         }
@@ -30,5 +31,6 @@ public class Ex08 {
 
     private static void noBenefit() {
         // Nothing
+        System.out.println("No coupons");
     }
 }
