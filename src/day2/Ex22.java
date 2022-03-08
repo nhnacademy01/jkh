@@ -17,7 +17,7 @@ class TicTacToe {
                     a = r.nextInt(3);
 
                 b = r.nextInt(3);
-                show(a, b);
+                //show(a, b);
             } else {
                 if (sc.hasNext()){
                     while (true){
@@ -32,7 +32,7 @@ class TicTacToe {
                         break;
                 }
                 System.out.println("사용자턴 xy");
-                show(a, b);
+                //show(a, b);
             }
         }
 
