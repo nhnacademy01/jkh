@@ -98,8 +98,8 @@ public class Ex23 {
     }
 
     void dice() {
-        int dices = 3;//주사위
-        int hum = 3;//사람
+        int dices = 2;//주사위
+        int hum = 2;//사람
         int []arr1 = diceSum(dices,hum);
         int win =-1;
         int temp = 1;
@@ -114,7 +114,7 @@ public class Ex23 {
         for (int i = 0; i < hum; i++) {
             if(arr1[win] == arr1[i] && win != i)
             {
-                System.out.printf(" %c",'A'+i);
+                System.out.printf(" %c 무승부",'A'+i);
             }
         }//무승부 조회!!
 
@@ -174,6 +174,9 @@ public class Ex23 {
                 }
                 }
             }
+        for (int i = 0; i <6 ; i++) {
+            System.out.println(lot[i]);
+        }
         }
 
 
@@ -205,7 +208,7 @@ public class Ex23 {
 
         for (int i = 0; i <size ; i++) {
             if(joker[i] == 1 ) {
-                System.out.printf("win %c",'A'+i);
+                System.out.printf(" joker win %c ",'A'+i);
                 return;
             }
             for (int j = 0; j < size ; j++) {
@@ -215,16 +218,17 @@ public class Ex23 {
 
             }
             if(arr1[i] == max)
-                System.out.printf("win %c",'A'+i);
+                System.out.printf("max win %c ",'A'+i);
         }
     }
 
     public static void main(String[] args) {
         Ex23 i = new Ex23();
         //i.add();
-        // i.nusangi();
-        //i.dice();
-      //  i.card();
-
+        //i.nusangi();
+        i.dice();
+        //i.card();
+        //i.lotto();
+        //i.gbb();
     }
 }
