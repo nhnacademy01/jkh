@@ -1,32 +1,30 @@
 package day3;
 
 public class Ex03 {
-    public class Hammer {
-        String model;
-        int number;
-        static int weight = 2_000;
-
-        public void print(String name) {
-            System.out.println(name + ": " + model + ", " + number + ", " + weight);
-        }
     public static void main(String[] args) {
-        System.out.println("weight = " + Hammer.weight);
 
-        Hammer h1 = new Hammer();
-        h1.model = "h1";
-        h1.number = 1;
+    }
+}
+class MethodCallStack {
+    public static void main(String[] args) {
+        System.out.println("main 시작");  // (1)
+        driveCar();
+        System.out.println("main 끝");   // (7)
+    }
 
-        Hammer h2 = new Hammer();
-        h2.model = "h2";
-        h2.number = 10;
+    static void driveCar() {
+        System.out.println(" driveCar 시작");  // (2)
+        putOnSeatbelt();
+        // (4)
+        pushGasPedal();
+        System.out.println(" driveCar 끝");   // (6)
+    }
 
-        h1.print("h1");
-        h2.print("h2");
+    static void putOnSeatbelt() {
+        System.out.println(" putOnSeatbelt 호출"); // (3)
+    }
 
-        h2.number = 11;
-        h2.weight = 1_000;
-
-        h1.print("h1");
-        h2.print("h2");
+    static void pushGasPedal() {
+        System.out.println(" pushGasPedal 호출");  // (5)
     }
 }
