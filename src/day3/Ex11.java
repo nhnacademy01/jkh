@@ -1,6 +1,15 @@
 package day3;
 
 public class Ex11 {
+
+    public static void main(String[] args) {
+        System.out.println("main 실행");
+        Ex111 money = new Ex111();
+        System.out.printf("money = %d %s%n", money.amount, money.currency);
+        System.out.printf("calling count = %d%n", Ex111.count);
+    }
+}
+class Ex111{
     long amount = 0L;
     String currency = "WON";
     static int count = 0;
@@ -16,16 +25,10 @@ public class Ex11 {
         currency = "DOLLAR";
         count++;
     }
-    public Ex11() {
+    public  Ex111() {
         System.out.println("생성자");
         amount = 1L;
         currency = "GOLD";
         count++;
-    }
-    public static void main(String[] args) {
-        System.out.println("main 실행");
-        Ex11 money = new Ex11();
-        System.out.printf("money = %d %s%n", money.amount, money.currency);
-        System.out.printf("calling count = %d%n", count);
     }
 }
