@@ -31,4 +31,4 @@ class Ex111{
         currency = "GOLD";
         count++;
     }
-}
+}//ex11안에 선언시 클래스 초기화가 먼저 실행됨
