@@ -14,7 +14,9 @@ public class Ex22 {
             }
         }
     }
+    static void check_game(){
 
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,7 +33,6 @@ public class Ex22 {
 
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
-                    board[i][j] = ' ';
                 }
             }
             show(board);
