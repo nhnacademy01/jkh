@@ -7,7 +7,7 @@ class UserData {
     String name;
     String id;
     String pw;
-    int[] state = new int[3];
+    int[] state;
 
     public UserData(UserData ud) {
         this.name = ud.name;
@@ -113,18 +113,14 @@ class UserAdd {
 
 public class Ex13 {
 
-    public Ex13() {
-
-    }
-
-    public static void menuShow() {
-        System.out.println("nhn academy에 오신 것을 환영합니다. 아래에엇 메뉴를 선택하세요");
+    public void menuShow() {
+        System.out.println("nhn academy에 오신 것을 환영합니다. 아래에 메뉴를 선택하세요");
         System.out.println("1. 회원가입");
         System.out.println("2. 로그인");
         System.out.println("0. 종료");
     }
 
-    public static int userMenuInput() {
+    public int userMenuInput() {
         System.out.println('>');
         Scanner sc = new Scanner(System.in);
         int menuId = -1;
@@ -134,12 +130,12 @@ public class Ex13 {
         return menuId;
     }
 
-    public static String login() {
+    public String login() {
         System.out.println("로그인 해주세요");
         Scanner sc = new Scanner(System.in);
         UserAdd userList = new UserAdd();
-        String userId = null;
-        String userPw = null;
+        String userId = "";
+        String userPw = "";
         int idErrorCount = 0;
         int[] temps = new int[2];
         List<UserData> tempUd = new ArrayList<UserData>();
@@ -196,45 +192,46 @@ public class Ex13 {
 
     public static void main(String[] args) {
 
-        List<String> testList = new ArrayList<String>();
+        Ex13 i = new Ex13();
 
         UserAdd ua = new UserAdd();
-        int[] temps = new int[3];
-        while (true) {
-            menuShow();
-            int menuId = userMenuInput();
-            switch (menuId) {
-                case 0:
-                    return;
-                case 1:
-                    temps = ua.setUserDate();
-                    if (temps[0] == 1 && temps[1] == 1 && temps[2] == 1) {
-                        System.out.println("회원가입에 성공하셨습니다. 이전메뉴로 돌아갑니다.");
+        int[] temps;
+        // while (true) {
+        i.menuShow();
+        int menuId = i.userMenuInput();
+        switch (menuId) {
+            case 0:
+                return;
+            case 1:
+                temps = ua.setUserDate();
+                if (temps[0] == 1 && temps[1] == 1 && temps[2] == 1) {
+                    System.out.println("회원가입에 성공하셨습니다. 이전메뉴로 돌아갑니다.");
+                } else {
+                    System.out.print("회원가입에 실패하셧습니다.");
+                    if (temps[0] == 5) {
+                        System.out.println("아이디 중복");
+                    } else if (temps[1] == 0) {
+                        System.out.println("비밀번호 불일치");
                     } else {
-                        System.out.print("회원가입에 실패하셧습니다.");
-                        if (temps[0] == 5) {
-                            System.out.println("아이디 중복");
-                        } else if (temps[1] == 0) {
-                            System.out.println("비밀번호 불일치");
-                        } else {
-                            System.out.println("");
-                        }
+                        System.out.println("");
                     }
-                    break;
-                case 2:
-                    System.out.println("로그인 해주세요");
-                    String checkLoign = login();
-                    if (checkLoign != null) {
-                        System.out.println(checkLoign + "님 환영합니다.");
-                    } else {
-                        System.out.println("다시 로그인 해주세요");
-                    }
-                    break;
-                default:
-                    System.out.println("메뉴값이 잘못입력하였습니다.");
+                }
+                break;
+            case 2:
+                System.out.println("로그인 해주세요");
+                String checkLogin = i.login();
+                if (checkLogin != null) {
+                    System.out.println(checkLogin + "님 환영합니다.");
                     return;
-            }
+                } else {
+                    System.out.println("다시 로그인 해주세요");
+                }
+                break;
+            default:
+                System.out.println("메뉴값이 잘못입력하였습니다.");
+                break;
         }
+        // }
 
 
     }

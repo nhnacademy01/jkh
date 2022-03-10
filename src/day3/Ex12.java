@@ -8,6 +8,6 @@ public class Ex12 {
     private CardType type;
     private Number number;
     private Ex12(CardType type){
-        if(type != JO)
+        //if(type != JO)
     }
 }
