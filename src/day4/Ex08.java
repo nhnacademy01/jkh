@@ -1,3 +1,4 @@
+/*
 package day4;
 
 public class Ex08 {
@@ -23,4 +24,4 @@ final class Love {
     }
 }
 class Jealousy extends Love {   // 상속 불가능
-}
+}*/

@@ -47,12 +47,12 @@ class SuperCar2 extends Car2 {
 
     @Override
     void speedUp() {
-        speed += 4;
+       // speed += 4;
         super.speedUp();
         super.speedUp();
     }
 
     void boosterOn() {
-        speed = MAX_SPEED;
+       // speed = MAX_SPEED;
     }
 }
