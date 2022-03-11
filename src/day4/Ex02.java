@@ -1,3 +1,4 @@
+/*
 package day4;
 
 class Vehicle {
@@ -23,3 +24,4 @@ public class Ex02  {
 
     }
 }
+*/
