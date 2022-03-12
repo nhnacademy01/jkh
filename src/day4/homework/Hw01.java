@@ -1,6 +1,5 @@
 package day4.homework;
 
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -38,29 +37,25 @@ public class Hw01 {
         }
     }
 }
-abstract class UesrDataCollect{
-    abstract public String InputToIdGet();
-    abstract public String InputToPwGet();
-    abstract public String InputToNameGet();
-    abstract public int InputToLevelGet();
-    abstract public boolean UserDataFindValue();
-}
 
-class Register extends UesrDataCollect {
+
+class Register {
     private List<UserData> ud = new ArrayList<>();
 
     void login() {
         Scanner sc = new Scanner(System.in);
         String tempId = null;
         String tempPw = null;
+        int tempLevel = 0;
         int count = 0;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 20; i++) {
             System.out.println("로그인 해주세요");
             System.out.println("아이디 >");
             tempId = sc.nextLine();
             System.out.println("비밀번호 >");
             tempPw = sc.nextLine();
             count++;
+
             if (count == 4) {
                 System.out.println("잠김!!");
                 return;
@@ -73,6 +68,7 @@ class Register extends UesrDataCollect {
                     System.out.println("아이디 혹은 비밀번호가 틀렸습니다.(다시 로그인 해주세요)");
                     break;
                 }
+
             }
 
         }
@@ -94,6 +90,7 @@ class Register extends UesrDataCollect {
         String tempId = null;
         String tempPw = null;
         String tempPw2 = null;
+        int tempLevel = -1;
         ErrorCode ec = new ErrorCode();
         System.out.println("회원가입을 해주세요");
         System.out.println("아이디 > ");
@@ -129,34 +126,21 @@ class Register extends UesrDataCollect {
         System.out.println(ec.nullCheck);
         //-----------------------------//
             //todo userlevel 추가
-        if (ec.nullCheck != 0 && ec.id != 0 && ec.pw != 0 && ec.name != 0) {
-            ud.add(new UserData(tempName, tempId, tempPw, ec));
+        System.out.println("권한(1:권리자, 2:일반) > ");
+        tempLevel = sc.nextInt();
+        if(tempLevel != -1){
+            ec.level = 0;
+        }else if( tempLevel == 1 || tempLevel == 2){
+            ec.level = 1;
+        }
+        System.out.println(ec.level);
+        if (ec.nullCheck != 0 && ec.id != 0 && ec.pw != 0 && ec.name != 0 && ec.level != 0) {
+            ud.add(new UserData(tempName, tempId, tempPw,tempLevel,ec));
             System.out.println(ud.get(0).name);
             System.out.println("회원가입에 성공했습니다. 이전메뉴로 돌아갑니다.");
         }
         return 0;
 
-    }
-
-
-    @Override
-    public String UserToIdGet() {
-        return null;
-    }
-
-    @Override
-    public String UserToPwGet() {
-        return null;
-    }
-
-    @Override
-    public String UserToNameGet() {
-        return null;
-    }
-
-    @Override
-    public int UserToLevelGet() {
-        return 0;
     }
 }
 class UserData {
