@@ -19,7 +19,10 @@ public class Counter {
     public int dcPrice(int totalItemPrice){
         //todo 할인 진행
         //int customerMoney= 20_000;
-        double calculation = totalItemPrice *coupon.percent - coupon.won1000;
+        double calculation = totalItemPrice *coupon.percent;
+        if(calculation >1000){
+            calculation -= coupon.won1000;
+        }
         return totalItemPrice - (int)calculation;
     }
     class Coupon {

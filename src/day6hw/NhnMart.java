@@ -7,32 +7,36 @@ class NhnMartShell {
         NhnMart mart = new NhnMart();
         mart.prepareMart();
 
-        BuyList buyList = inputBuyListFromShell();
+        BuyList buyList =  inputBuyListFromShell();
 
-        Customer jordan = new Customer(buyList);
-        // 장바구니를 챙긴다.
+      Customer jordan = new Customer(buyList);
+       // 장바구니를 챙긴다.
         jordan.bring(mart.provideBasket());
-        // 식품을 담는다.
-        jordan.pickFoods(mart.getFoodStand());
+       // 식품을 담는다.
+       jordan.pickFoods(mart.getFoodStand());
         // 카운터에서 계산한다.
-        jordan.payTox(mart.getCounter());
+       jordan.payTox(mart.getCounter());
     }
 
     private static BuyList inputBuyListFromShell() {
         // Scanner에서 buyList 만들기
-        //        BuyList buyList = new BuyList();
-        //buyList.add(new BuyList.Item("양파", 2));
-        //buyList.add(new BuyList.Item("계란", 3));
+        System.out.println("NHN 마트에 오신 것을 환영합니다. 사고 싶은 물건을 골라주세요(2종류만)");
+      //  BuyList buyList = new BuyList();
+       // buyList.add(new BuyList.Item("양파", 2));
+       // buyList.add(new BuyList.Item("계란", 3));
         // TODO
         Scanner sc = new Scanner(System.in);
         BuyList bl = new BuyList();
         String tempName = "";
         int tempCount =0;
-        System.out.println("구매 물건과 ");
-        for (int i = 0; i < 1; i++) {
+        System.out.println("구매 물건과 수량을 입력해주세요");
+        for (int i = 0; i < 2; i++) {
             tempName = sc.nextLine();
             tempCount = sc.nextInt();
+            System.out.println(tempName +" | "+tempCount);
             bl.add(new BuyList.Item(tempName,tempCount));
+            tempName = "";
+            tempCount =0;
         }
 
         return bl;
@@ -50,7 +54,7 @@ public class NhnMart {
             foodStand.add(new Food("양파", 1_000));
         }
         for (int i = 0; i < 5; i++) {
-            foodStand.add(new Food("계란(30개)", 5_000));
+            foodStand.add(new Food("계란", 5_000));
         }
         for (int i = 0; i < 10; i++) {
             foodStand.add(new Food("파", 500));
