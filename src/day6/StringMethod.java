@@ -1,6 +1,17 @@
 package day6;
 
 public class StringMethod {
+    void showMethod(){
+        System.out.println("NHN ACADEMY".indexOf('H'));
+        System.out.println("NHN ACADEMY".indexOf(" "));
+        System.out.println("NHN ACADEMY".indexOf("MY"));
+        System.out.println("NHN ACADEMY".replace("MY","MY!"));
+        System.out.println("car, bus, truck".split(","));
+        System.out.println("NHN ACADEMY".startsWith("NHN"));
+        System.out.println("NHN ACADEMY".substring(1,5));
+        System.out.println("NHN ACADEMY".trim());
+        System.out.println(String.valueOf(1));
+    }
     public static void main(String[] args) {
         System.out.println("\"NHN\".charAt(1): " + "NHN".charAt(1));
         System.out.println("\"NHN\".compareTo(\"ACADEMY\"): " + "NHN".compareTo("ACADEMY"));
