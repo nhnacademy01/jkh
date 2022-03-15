@@ -3,7 +3,7 @@ package day6.hw;
 import java.util.ArrayList;
 
 public class Customer {
-    private Account account = new Account();
+    private Account account;
     private String customerName;
 
     public Customer(Account account, String customerName){
@@ -18,10 +18,5 @@ public class Customer {
     public String getCustomerName() {
         return customerName;
     }
-//    private void joinCustomer(){
-//        for (int i = 0; i < 5; i++) {
-//            accounts.add(new Account());
-//
-//        }
-//    }
+
 }

@@ -4,9 +4,9 @@ package day6;
 
 public class Ex05 {
     public static void main(String[] args) {
-        Money1 money1;
+     //   Money1 money1;
         try{
-            money1 = new Money1(-1000,"WON");
+           // money1 = new Money1(-1000,"WON");
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
             throw e;

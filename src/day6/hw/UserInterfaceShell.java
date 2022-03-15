@@ -8,6 +8,5 @@ public class UserInterfaceShell {
     public static void main(String[] args) {
         userShell();
         Bank bank = new Bank();
-
     }
 }
