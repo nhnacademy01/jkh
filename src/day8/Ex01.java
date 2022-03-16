@@ -23,7 +23,7 @@ public class Ex01 {
 
     void checkIndex(int index, int length) {
         if (index < 0 || index >= length)
-            throw new IndexOutOfBoundsException("MyArrayList에는 " + index " + 에 위치하는 요소가 없어요");
+            throw new IndexOutOfBoundsException("MyArrayList에는 " + index + " 에 위치하는 요소가 없어요");
     }
     public int size() {
         // TODO
