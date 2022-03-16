@@ -1,33 +1,50 @@
 package day6hw;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Counter {
-   //todo
-    /*
-       1. 장바구니 금액 산정
-       2. 할인
-       3. 결재
-       4. 고객에게 남은 돈은?
-    * */
+
     private int totalItemPrice;
     private Coupon coupon = new Coupon();
 
     public Counter(){
-    }//todo editting
+    }
 
     public int dcPrice(int totalItemPrice){
-        //todo 할인 진행
+
         //int customerMoney= 20_000;
-        double calculation = totalItemPrice *coupon.percent;
-        if(calculation >1000){
-            calculation -= coupon.won1000;
+        double calculation=1;
+        if(coupon.havePercent >=1) {
+            calculation = totalItemPrice * coupon.percent;
+            coupon.havePercent --;
         }
+        if(coupon.haveWon1000 >= 1) {
+            if (calculation > 1000) {
+                calculation -= coupon.won1000;
+            }
+            coupon.haveWon1000--;
+        }
+        RandomCoupon();
         return totalItemPrice - (int)calculation;
+    }
+    private void RandomCoupon(){
+        Random r = new Random();
+        int choice = r.nextInt(2);
+        if(choice == 0)
+        {
+            coupon.haveWon1000 ++;
+        }
+        else
+        {
+            coupon.havePercent ++ ;
+        }
     }
     class Coupon {
         Double percent = 0.9;
         int won1000 = 1000;
+        int havePercent = 1;
+        int haveWon1000 = 1;
     }
 
 
