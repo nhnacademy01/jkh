@@ -62,9 +62,10 @@ public class Ex02 {
 
     }
 
-    private Node getNode(int index) {
-//        115112
-    }
+//    private Node getNode(int index) {
+////        115112
+//        //return this.Node;
+//    }
 
 
 }
