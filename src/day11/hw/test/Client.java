@@ -1,4 +1,4 @@
-package day11;
+package day11.hw.test;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -7,10 +7,10 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class MyChatClient {
+public class Client {
     private final String id;
 
-    public MyChatClient(String id) {
+    public Client(String id) {
         this.id = id;
     }
 
@@ -20,7 +20,7 @@ public class MyChatClient {
             return;
         }
         String id = args[0];
-        MyChatClient client = new MyChatClient(id);
+        Client client = new Client(id);
         client.connect("127.0.0.1", 8888);
     }
 
